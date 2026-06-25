@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "./Register.css";
 
 function Register() {
 
@@ -40,10 +41,11 @@ function Register() {
 }
   };
 
-  return (
-    <div style={{ padding: "20px" }}>
+ return (
+  <div className="register-container">
+    <div className="register-card">
 
-      <h1>Register</h1>
+      <h1>Create Account 🚀</h1>
 
       <form onSubmit={handleRegister}>
 
@@ -52,29 +54,29 @@ function Register() {
           placeholder="Enter Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          className="input-field"
         />
-
-        <br /><br />
 
         <input
           type="email"
           placeholder="Enter Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className="input-field"
         />
-
-        <br /><br />
 
         <input
           type="password"
           placeholder="Enter Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className="input-field"
         />
 
-        <br /><br />
-
-        <button type="submit">
+        <button
+          type="submit"
+          className="register-btn"
+        >
           Register
         </button>
 
@@ -82,12 +84,13 @@ function Register() {
 
       <br />
 
-      <a href="/">
+      <a href="/" className="login-link">
         Already have an account? Login
       </a>
 
     </div>
-  );
+  </div>
+);
 }
 
 export default Register;
